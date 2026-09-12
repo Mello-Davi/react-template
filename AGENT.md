@@ -8,6 +8,11 @@ Welcome to the React Router 8 Template! This document provides context on how th
 - **Styling:** Tailwind CSS v4 (configured in `app/app.css` via `@import "tailwindcss";`).
 - **Language:** TypeScript.
 - **Package Manager:** pnpm.
+- **State Management:** Zustand.
+- **Forms & Validation:** React Hook Form + Zod (`@hookform/resolvers`).
+- **HTTP Client:** Axios.
+- **Mock API:** json-server.
+- **Linting:** ESLint.
 
 ## Directory Structure
 
@@ -17,7 +22,7 @@ All source code is located inside the `app/` directory:
 - **`app/components/`**: Reusable UI components. They should be modular, generic, and ideally stateless when possible.
 - **`app/pages/`**: Used for grouping page-level components or larger compositions of components that represent a full view, keeping the route files in `app/routes/` thin.
 - **`app/hooks/`**: Custom React hooks (`useFeature.ts`, etc.).
-- **`app/stores/`**: State management modules (e.g., Zustand, Jotai, or context providers).
+- **`app/stores/`**: Global state management modules built with Zustand.
 - **`app/assets/`**: Static assets like images, icons, and global fonts.
 
 ## Key Files
@@ -32,4 +37,7 @@ All source code is located inside the `app/` directory:
 - Always use TypeScript (`.ts` / `.tsx`).
 - Keep `app/routes/` files focused on routing, loaders, actions, and meta tags. Delegate complex UI to `app/pages/` or `app/components/`.
 - Since Tailwind v4 is used, prefer utility classes and avoid creating standalone CSS modules unless strictly necessary.
-- Before considering your task complete, ensure there are no import errors by running `pnpm run typecheck`.
+- **Forms:** Always use `react-hook-form` paired with `zod` for form state and validation. Use `@hookform/resolvers/zod` to bind them.
+- **State:** Use `zustand` for any global state. Keep stores small and modular inside `app/stores/`.
+- **API Calls:** Use `axios` for external requests. If mocking endpoints, configure them using `json-server`.
+- Before considering your task complete, ensure there are no import errors by running `pnpm run typecheck` and `pnpm run lint`.

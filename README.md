@@ -1,88 +1,78 @@
-# Welcome to React Router!
+# React Project Template
 
-A modern, production-ready template for building full-stack React applications using React Router.
+This repository is a blank-slate template configured for developing scalable and modern web applications. It integrates essential tools for routing, styling, state management, and validation.
 
-[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/remix-run/react-router-templates/tree/main/default)
+## Architecture and Technologies
 
-## Features
+This project is built using:
+- React 19
+- React Router v8
+- Vite
+- TypeScript
+- Tailwind CSS v4
+- Zustand (Global State Management)
+- React Hook Form + Zod (Form Validation)
+- Axios (HTTP Client)
+- JSON Server (Mock Backend)
+- ESLint (Code Quality)
 
-- 🚀 Server-side rendering
-- ⚡️ Hot Module Replacement (HMR)
-- 📦 Asset bundling and optimization
-- 🔄 Data loading and mutations
-- 🔒 TypeScript by default
-- 🎉 TailwindCSS for styling
-- 📖 [React Router docs](https://reactrouter.com/)
+## Project Structure
 
-## Getting Started
+The codebase is organized inside the `app/` directory to maintain separation of concerns:
 
-### Installation
+- `app/routes/`
+  Contains the application route definitions and components that map directly to URLs. Logic for data fetching (loaders) and mutations (actions) specific to a route should reside here.
 
-Install the dependencies:
+- `app/pages/`
+  Contains full-page UI compositions. Use this to construct complex views while keeping the files inside `app/routes/` focused solely on routing and data aggregation.
 
-```bash
-npm install
-```
+- `app/components/`
+  Contains reusable, generic, and modular UI components (e.g., buttons, inputs, modals) that can be shared across different pages and routes.
 
-### Development
+- `app/hooks/`
+  Contains custom React hooks for shared logic, abstracting side effects or complex behaviors outside of components.
 
-Start the development server with HMR:
+- `app/stores/`
+  Contains Zustand store configurations. Global states should be split logically into modular files within this directory.
 
-```bash
-npm run dev
-```
+- `app/assets/`
+  Contains static assets such as images, icons, and local fonts.
 
-Your application will be available at `http://localhost:5173`.
+## Running the Project
 
-## Building for Production
+Ensure you have Node.js and `pnpm` installed.
 
-Create a production build:
+1. **Install dependencies:**
+   ```bash
+   pnpm install
+   ```
 
-```bash
-npm run build
-```
+2. **Start the development server:**
+   ```bash
+   pnpm run dev
+   ```
 
-## Deployment
+3. **Build the project for production:**
+   ```bash
+   pnpm run build
+   ```
 
-### Docker Deployment
+4. **Preview the production build:**
+   ```bash
+   pnpm run start
+   ```
 
-To build and run using Docker:
+5. **Type checking and Linting:**
+   To verify TypeScript errors and run linting rules:
+   ```bash
+   pnpm run typecheck
+   # For linting (if configured in package.json):
+   pnpm run lint
+   ```
 
-```bash
-docker build -t my-app .
+## Development Guidelines
 
-# Run the container
-docker run -p 3000:3000 my-app
-```
-
-The containerized application can be deployed to any platform that supports Docker, including:
-
-- AWS ECS
-- Google Cloud Run
-- Azure Container Apps
-- Digital Ocean App Platform
-- Fly.io
-- Railway
-
-### DIY Deployment
-
-If you're familiar with deploying Node applications, the built-in app server is production-ready.
-
-Make sure to deploy the output of `npm run build`
-
-```
-├── package.json
-├── package-lock.json (or pnpm-lock.yaml, or bun.lockb)
-├── build/
-│   ├── client/    # Static assets
-│   └── server/    # Server-side code
-```
-
-## Styling
-
-This template comes with [Tailwind CSS](https://tailwindcss.com/) already configured for a simple default starting experience. You can use whatever CSS framework you prefer.
-
----
-
-Built with ❤️ using React Router.
-# react-template
+- **Forms:** Build forms using `react-hook-form` and perform data validation using `zod`.
+- **State Management:** Keep React components mostly stateless and manage global states inside `app/stores/` with `zustand`.
+- **Styling:** Utilize Tailwind CSS utility classes instead of creating custom CSS files whenever possible.
+- **Requests:** Use `axios` for standard HTTP requests. During development, mock REST endpoints using `json-server`.
