@@ -11,7 +11,6 @@ Welcome to the React Router 8 Template! This document provides context on how th
 - **State Management:** Zustand.
 - **Forms & Validation:** React Hook Form + Zod (`@hookform/resolvers`).
 - **HTTP Client:** Axios.
-- **Mock API:** json-server.
 - **Linting:** ESLint.
 
 ## Directory Structure
@@ -39,5 +38,5 @@ All source code is located inside the `app/` directory:
 - Since Tailwind v4 is used, prefer utility classes and avoid creating standalone CSS modules unless strictly necessary.
 - **Forms:** Always use `react-hook-form` paired with `zod` for form state and validation. Use `@hookform/resolvers/zod` to bind them.
 - **State:** Use `zustand` for any global state. Keep stores small and modular inside `app/stores/`.
-- **API Calls:** Use `axios` for external requests. If mocking endpoints, configure them using `json-server`.
+- **API Calls:** Use `axios` for external requests.
 - Before considering your task complete, ensure there are no import errors by running `pnpm run typecheck` and `pnpm run lint`.

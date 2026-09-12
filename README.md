@@ -1,78 +1,77 @@
-# React Project Template
+# Template de Projeto React
 
-This repository is a blank-slate template configured for developing scalable and modern web applications. It integrates essential tools for routing, styling, state management, and validation.
+Este repositório é um template inicial configurado para o desenvolvimento de aplicações web modernas e escaláveis. Ele integra ferramentas essenciais para roteamento, estilização, gerenciamento de estado e validação.
 
-## Architecture and Technologies
+## Arquitetura e Tecnologias
 
-This project is built using:
+Este projeto foi construído utilizando:
 - React 19
 - React Router v8
 - Vite
 - TypeScript
 - Tailwind CSS v4
-- Zustand (Global State Management)
-- React Hook Form + Zod (Form Validation)
-- Axios (HTTP Client)
-- JSON Server (Mock Backend)
-- ESLint (Code Quality)
+- Zustand (Gerenciamento de Estado Global)
+- React Hook Form + Zod (Validação de Formulários)
+- Axios (Cliente HTTP)
+- ESLint (Qualidade de Código)
 
-## Project Structure
+## Estrutura do Projeto
 
-The codebase is organized inside the `app/` directory to maintain separation of concerns:
+O código-fonte está organizado dentro do diretório `app/` para manter a separação de responsabilidades:
 
 - `app/routes/`
-  Contains the application route definitions and components that map directly to URLs. Logic for data fetching (loaders) and mutations (actions) specific to a route should reside here.
+  Contém as definições de rotas da aplicação e os componentes mapeados diretamente para as URLs. A lógica para busca de dados (loaders) e mutações (actions) específicas de uma rota devem residir aqui.
 
 - `app/pages/`
-  Contains full-page UI compositions. Use this to construct complex views while keeping the files inside `app/routes/` focused solely on routing and data aggregation.
+  Contém composições completas de interface. Utilize este diretório para construir visualizações complexas, mantendo os arquivos dentro de `app/routes/` focados apenas em roteamento e agregação de dados.
 
 - `app/components/`
-  Contains reusable, generic, and modular UI components (e.g., buttons, inputs, modals) that can be shared across different pages and routes.
+  Contém componentes de interface modulares, genéricos e reutilizáveis (ex.: botões, inputs, modais) que podem ser compartilhados entre diferentes páginas e rotas.
 
 - `app/hooks/`
-  Contains custom React hooks for shared logic, abstracting side effects or complex behaviors outside of components.
+  Contém hooks customizados do React para lógicas compartilhadas, abstraindo efeitos colaterais ou comportamentos complexos para fora dos componentes.
 
 - `app/stores/`
-  Contains Zustand store configurations. Global states should be split logically into modular files within this directory.
+  Contém as configurações de estado do Zustand. Estados globais devem ser separados logicamente em arquivos modulares dentro deste diretório.
 
 - `app/assets/`
-  Contains static assets such as images, icons, and local fonts.
+  Contém arquivos estáticos, como imagens, ícones e fontes locais.
 
-## Running the Project
+## Executando o Projeto
 
-Ensure you have Node.js and `pnpm` installed.
+Certifique-se de ter o Node.js e o `pnpm` instalados.
 
-1. **Install dependencies:**
+1. **Instalar dependências:**
    ```bash
    pnpm install
    ```
 
-2. **Start the development server:**
+2. **Iniciar o servidor de desenvolvimento:**
    ```bash
    pnpm run dev
    ```
 
-3. **Build the project for production:**
+3. **Gerar a build de produção:**
    ```bash
    pnpm run build
    ```
 
-4. **Preview the production build:**
+4. **Visualizar a build de produção:**
    ```bash
    pnpm run start
    ```
 
-5. **Type checking and Linting:**
-   To verify TypeScript errors and run linting rules:
+5. **Verificação de Tipos e Linting:**
+   Para verificar erros do TypeScript e regras do ESLint:
    ```bash
    pnpm run typecheck
-   # For linting (if configured in package.json):
+   
    pnpm run lint
    ```
 
-## Development Guidelines
+## Diretrizes de Desenvolvimento
 
-- **Forms:** Build forms using `react-hook-form` and perform data validation using `zod`.
-- **State Management:** Keep React components mostly stateless and manage global states inside `app/stores/` with `zustand`.
-- **Styling:** Utilize Tailwind CSS utility classes instead of creating custom CSS files whenever possible.
-- **Requests:** Use `axios` for standard HTTP requests. During development, mock REST endpoints using `json-server`.
+- **Formulários:** Construa formulários utilizando `react-hook-form` e realize a validação de dados utilizando `zod`.
+- **Gerenciamento de Estado:** Mantenha os componentes React majoritariamente sem estado próprio e gerencie os estados globais dentro de `app/stores/` utilizando o `zustand`.
+- **Estilização:** Utilize as classes utilitárias do Tailwind CSS, evitando criar arquivos CSS customizados sempre que possível.
+- **Requisições:** Utilize `axios` para requisições HTTP padrão.
